@@ -97,3 +97,26 @@ from
   bookings
 where
   payment_status is null
+
+
+
+   -- query 4
+select
+  booking_id,
+  full_name,
+  fixture,
+  total_cost
+from
+  bookings as b
+  inner join users as u on b.user_id = u.user_id
+  inner join matches as m on b.match_id = m.match_id
+  
+  
+  -- Query 5
+select
+  u.user_id,
+  u.full_name,
+  b.booking_id
+from
+  bookings as b
+  full join users as u on b.user_id = u.user_id
