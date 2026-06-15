@@ -47,7 +47,6 @@ INSERT INTO Users (user_id, full_name, email, role, phone_number) VALUES
 
 
 -- Insert Data to matches table
-
 INSERT INTO Matches (match_id, fixture, tournament_category, base_ticket_price, match_status) VALUES
 (101, 'Real Madrid vs Barcelona', 'Champions League', 150.00, 'Available'),
 (102, 'Man City vs Liverpool', 'Premier League', 120.00, 'Selling Fast'),
@@ -66,3 +65,12 @@ INSERT INTO Bookings (booking_id, user_id, match_id, seat_number, payment_status
 
 
 -- Query 1
+select
+  match_id,
+  fixture,
+  base_ticket_price
+from
+  Matches
+where
+  tournament_category = 'Champions League'
+  and match_status = 'Available'
